@@ -1,0 +1,116 @@
+7月28日
+进程 拥有独立栈空间
+线程 共享一个栈空间
+
+使用变量 $
+取消变量 unset
+
+read 从标准输入读
+
+======================
+if [ test ]
+  then
+else
+fi
+======================
+if[]
+   then
+elif
+   then
+else
+fi
+======================
+case $FRUIT in
+      apple)        ;;
+      banana)       ;;
+      orange)       ;;
+esac
+======================
+for para in "循环范围"
+
+例:for day in "sun mon tue wed thu fri sat"
+	do
+		echo $day
+	done
+======================
+while cmd 
+	do
+	      list 
+	done
+======================
+-eq 等于  
+-ge 大于等于 
+-gt 大于
+-le 小于 等于 
+-lt 小于 
+-ne 不等于 
+
+exec											
+fork
+
+sed 
+	-s
+
+sed 's/j/ma' list     把list文件中的j替換为ma
+sed -f sedsrc list    sedsrc是要替换的命令
+
+        -d
+sed '/^$/d' list 删除空行
+
+将unix 体换为 \s-2unix\\s0
+wangke@Wangke-PC:echo unix | sed 's/unix/\\s-2unix\\s0/'
+		
+		\s-2unix\s0
+---------------------------------------------
+
+显示/etc下以r开头的文件
+for filename in /etc/r*; do if [ -d $filename ]; then echo $filename is dir; fi; done 
+---------------------------------------------
+
+删除/Test下所有文件
+wangke@Wangke-PC:/Test$ for filename in "/Test/*"
+> do
+> \rm $filename
+> done
+---------------------------------------------
+
+添加10个用戶,默认密码为123
+user_num=0
+while [ user_num -lt 10]
+do
+	useradd user$usernum
+	echo "123"|passwd --stdin user$usernum
+	let "user_num=$user_num+1"
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
