@@ -15,6 +15,8 @@ int str_cmp(const char *str1,const char *str2)
 	}
 	return *str1-*str2;
 }
+
+
 char* str_cpy(char *str1,char *str2)
 {
 	if(NULL==str1||NULL==str2)
