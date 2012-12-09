@@ -3,3 +3,7 @@
 *~
 *.out
 *.swp
+*.tmp
+*.temp
+*.bak
+
