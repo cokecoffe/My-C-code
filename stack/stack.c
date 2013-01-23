@@ -15,27 +15,29 @@ int InitStack(pSqStack s)
 	s->stacksize = STACK_SIZE;
 	return OK;
 }
-int EmptyStack(pSqStack s)
+bool isEmptyStack(pSqStack s)
 {
 	if(s->top==0)
 	{
-		return EMPTY;
+		return YES;
 	}
+	return NO;
 }
-int FullStack(pSqStack s)
+bool isFullStack(pSqStack s)
 {
 	if(s->top == s->stacksize)
 	{
 		printf("stack full");
-		return FULL;
-	}
+		return YES;
+	}		
+	return NO;
 }
 
 int GetTop(pSqStack s,pElem e)
 {
 	int ret;
-	ret = EmptyStack(s);
-	if(EMPTY==ret)
+	ret = isEmptyStack(s);
+	if(YES==ret)
 	{
 		printf("栈空,无法取栈顶元素\n");
 		return ER;
@@ -49,8 +51,8 @@ int GetTop(pSqStack s,pElem e)
 int Pop(pSqStack s)
 {
 	int ret;
-	ret = EmptyStack(s);
-	if(EMPTY==ret)
+	ret = isEmptyStack(s);
+	if(YES==ret)
 	{
 		printf("栈空,无法弹栈\n");
 		return ER;
@@ -64,9 +66,9 @@ int Pop(pSqStack s)
 int Push(pSqStack s,Elem e)
 {
 	int ret;
-	ret = FullStack(s);
+	ret = isFullStack(s);
 	
-	if(ret == FULL)
+	if(ret == YES)
 	{
 		printf("Push err\n");
 		return ER;

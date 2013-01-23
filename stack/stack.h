@@ -3,8 +3,8 @@
 
 #define OK 1
 #define ER -1
-#define EMPTY -2
-#define FULL -1
+#define YES 1 
+#define NO 0 
 #define STACK_SIZE 20
 #include"../malloc/create.h"
 typedef struct
@@ -29,7 +29,7 @@ int InitStack(pSqStack);
 int GetTop(pSqStack,pElem);
 int Pop(pSqStack);
 int Push(pSqStack,Elem);
-int EmptyStack(pSqStack);
-int FullStack(pSqStack);
+bool isEmptyStack(pSqStack);
+bool isFullStack(pSqStack);
 
 #endif
